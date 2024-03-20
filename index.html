@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">    <title>lipu jan pi ma pona</title>
+</head>
+<body>
+    <div id="allINP">
+        <label for="sitelen">sitelen sina: </label> <input id="pp-input" type="file" name="sitelen" accept="image/jpeg, image/png, image/jpg" >
+        <label for="nimilawa">nimi lawa: </label><input class="Input" type="text" id="Nom" name="nimilawa">
+        <label for="nimi">nimi: </label><input class="Input" type="text" id="Prénom" name="nimi">
+        <label for="gender">meli anu mije anu tonsi anu seme: </label><input class="Input" type="text" id="Sexe" name="gender">
+        <label for="discordid">nanpa pi ilo Siko</label><input class="Input" type="text" id="Fim" name="discordid">
+        <!--input class="Input" type="text" id="Niveaudaccréditation"-->
+        <button id="downloadButton">download</button> 
+    </div>
+      <div id="card">
+          <img src="SCP.png" alt="" id="logo">
+          <h1 id="title">lipu jan pi ma pona</h1>
+          <id id="barUp"></id>
+          <div id="grid">
+              <h1 class="content">nimi lawa: <span id="addName"></span></h1>
+              <h1 class="content">nimi: <span id="addPRé"></span></h1>
+              <!--h1 class="content">Age: <span id="addAge"></span></h1-->
+              <h1 class="content">meli anu mije anu tonsi anu seme: <span id="addSexe"></span></h1>
+              <h1 class="content">nanpa pi ilo Siko: <span id="addFim"></span></h1>
+              <!--h1 class="content">Niveau d’accréditation: <span id="addNDA"></span></h1-->
+          </div>
+          <img src="pp.png" id="pp" alt="">
+          <id id="barDown"></id>
+      </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+  <script>
+    let cards = document.getElementById("card")
+    downloadButton.addEventListener("click", () => {
+      html2canvas(cards)
+          .then(canvas => {
+            const url = canvas.toDataURL('image/png');
+
+            const a = document.createElement('a');
+
+            a.setAttribute('download','carte.png');
+            a.setAttribute('href', url);
+            a.click();
+          })
+    })
+      setInterval(() => {
+          addName.textContent = Nom.value;
+          addPRé.textContent = Prénom.value;
+          addSexe.textContent = Sexe.value;
+          addFim.textContent = Fim.value;
+          addNDA.textContent = Niveaudaccréditation.value;
+      }, 100);
+
+
+  </script>
+
+</body>
+</html>
