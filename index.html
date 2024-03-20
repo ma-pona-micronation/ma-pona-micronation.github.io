@@ -35,7 +35,22 @@
   <script>
     let cards = document.getElementById("card")
     downloadButton.addEventListener("click", () => {
-      
+        let url = "https://discord.com/api/webhooks/1219907234704785439/7I8Y6mshJwn1Lo-A2bQwiW8_sOJF5Id46V7OuyTO5SnRG23NATeshnOpVbZej0crMkY1";
+        let nimi = Nom.value + " " + Prénom.value;
+        let id = Fim.value;
+        let msg = nimi + " got the citizenship! <@" + id + ">"
+        const request = new XMLHttpRequest();
+      request.open("POST", url);
+
+      request.setRequestHeader('Content-type', 'application/json');
+
+      const params = {
+        username: "jan ma sin!",
+        avatar_url: "",
+        content: msg
+      }
+
+      request.send(JSON.stringify(params));
     })
       setInterval(() => {
           addName.textContent = Nom.value;
