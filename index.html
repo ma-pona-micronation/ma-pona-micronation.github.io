@@ -13,7 +13,7 @@
         <label for="gender">meli anu mije anu tonsi anu seme: </label><input class="Input" type="text" id="Sexe" name="gender">
         <label for="discordid">nanpa pi ilo Siko</label><input class="Input" type="text" id="Fim" name="discordid">
         <!--input class="Input" type="text" id="Niveaudaccréditation"-->
-        <button id="downloadButton">download</button> 
+        <button id="downloadButton">mi pini!</button> 
     </div>
       <div id="card">
           <img src="SCP.png" alt="" id="logo">
@@ -35,16 +35,7 @@
   <script>
     let cards = document.getElementById("card")
     downloadButton.addEventListener("click", () => {
-      html2canvas(cards)
-          .then(canvas => {
-            const url = canvas.toDataURL('image/png');
-
-            const a = document.createElement('a');
-
-            a.setAttribute('download','carte.png');
-            a.setAttribute('href', url);
-            a.click();
-          })
+      
     })
       setInterval(() => {
           addName.textContent = Nom.value;
